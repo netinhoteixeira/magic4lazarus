@@ -62,7 +62,7 @@ type
     constructor Create();
     destructor Destroy; override;
     function FromFile(filename: string): string;
-    function FromBuffer(var buffer; Count: longint): string;
+    function FromBuffer(var buffer; count: longint): string;
   end;
 
 // Detect the mime of file's content and return it
@@ -80,6 +80,10 @@ const
   {$ENDIF}
   {$IFDEF LINUX}
   MAGIC_LIBRARY = 'libmagic.so';
+  {$ENDIF}
+  {$IFDEF DARWIN}
+  MAGIC_LIBRARY = 'libmagic.dylib';
+  {$linklib libmagic}
   {$ENDIF}
 
   MAGIC_NONE = $000000; // No flags
@@ -284,10 +288,10 @@ begin
 end;
 
 // Identify the contents of buffer.
-function TMagic.FromBuffer(var buffer; Count: longint): string;
+function TMagic.FromBuffer(var buffer; count: longint): string;
 begin
   Self.BeforeDetect();
-  Result := magic_buffer(Self.FHANDLE, buffer, Count);
+  Result := magic_buffer(Self.FHANDLE, buffer, count);
 end;
 
 end.
