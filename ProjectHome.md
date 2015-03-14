@@ -1,0 +1,1 @@
+Using the same library of file command from Linux (or the version from Windows) we can detect the real mime of content from a file or a buffer.
