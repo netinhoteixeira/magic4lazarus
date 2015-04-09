@@ -23,5 +23,5 @@ Thank you to Karl Michel Schindler <karl-michael.schindler@web.de>
 
 * [Lazarus](http://www.lazarus.freepascal.org/)
 * [File](http://www.darwinsys.com/file/)
-* [File (Source)](ftp://ftp.astron.com/pub/file/)
+* File (Source) - ftp://ftp.astron.com/pub/file/
 * [File for Windows](http://gnuwin32.sourceforge.net/packages/file.htm)
